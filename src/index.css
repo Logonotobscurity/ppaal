@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/**
+ * PAL Design Tokens
+ * Strict adherence required - no deviation
+ */
+
+:root {
+  /* Colors - PAL Design System */
+  --color-ivory: #FAF7F2;      /* Background */
+  --color-charcoal: #16151A;   /* Primary surfaces */
+  --color-violet: #6C3DF4;     /* PAL reasoning / intelligence */
+  --color-teal: #2E8B8B;       /* Understood / validated */
+  --color-amber: #D97706;      /* Uncertainty / clarification */
+  --color-red: #DC2626;        /* Blocked / rejected */
+
+  /* Typography */
+  --font-ui: 'DM Sans', system-ui, sans-serif;
+  --font-editorial: 'Cormorant Garamond', serif; /* Landing only */
+
+  /* Spacing & Radius */
+  --radius-card: 16px;
+  --radius-card-lg: 24px;
+}
+
+/* Base Styles */
+@theme inline {
+  --color-ivory: #FAF7F2;
+  --color-charcoal: #16151A;
+  --color-violet: #6C3DF4;
+  --color-teal: #2E8B8B;
+  --color-amber: #D97706;
+  --color-red: #DC2626;
+
+  --font-family-ui: 'DM Sans', system-ui, sans-serif;
+  --font-family-editorial: 'Cormorant Garamond', serif;
+
+  --radius-card: 16px;
+  --radius-card-lg: 24px;
+}
+
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+  line-height: 1.5;
+}
+
+/* FORBIDDEN: Gradients everywhere, AI-robot imagery, dominant chat bubbles */
+/* Keep design clean: large whitespace, thin borders, subtle surfaces */

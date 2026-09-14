@@ -1,0 +1,16 @@
+You are building PAL — a voice-first AI OS for African commerce.
+
+Stack: React 18, TypeScript, Vite 5, Supabase, Tailwind, shadcn/ui, Zustand, TanStack Query.
+
+Design tokens: Ivory #FAF7F2, Charcoal #16151A, Violet #6C3DF4, Teal #2E8B8B, Amber #D97706, Red #DC2626. Font: DM Sans.
+
+Rules:
+- TypeScript strict, no `any`
+- Zod for all validation
+- Supabase RLS on every table
+- Gs gate before every DO action
+- CME before every AI reasoning step
+- 768-dim embeddings (multilingual-e5-base)
+- Quiet hours 21:00-08:00 WAT
+- Feature-based file structure
+- JSDoc on all public APIs
