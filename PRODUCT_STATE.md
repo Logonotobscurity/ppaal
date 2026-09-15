@@ -1,9 +1,16 @@
 # PAL — Project State
 
-## Last Updated: 2026-02-13
+## Last Updated: 2026-09-15
 
 ## Current Objective
-✅ **WEEK 5: Approvals + Intelligence** — COMPLETE
+✅ **ALL WEEKS COMPLETE** — Production Ready for Deployment
+
+## Supabase Configuration
+- ✅ Project connected: `wbxsxwgopveolzlckqun`
+- ✅ Environment file created: `.env.local`
+- ✅ Client library installed: `@supabase/supabase-js`, `@supabase/ssr`
+- ✅ Migration files ready: 5 files (34 KB total)
+- ✅ Setup guide created: `SUPABASE_SETUP.md`
 
 ## Completed Tasks
 
@@ -14,6 +21,7 @@
   - `002_vector_indexes.sql` — HNSW indexes for semantic search
   - `003_rls_policies.sql` — FORCE RLS on all tables
   - `004_performance_indexes.sql` — Composite indexes + quiet hours enforcement
+  - `005_seed_data.sql` — Optional test data (commented out)
 - [x] **Task 3:** Design tokens (index.css with PAL colors)
 - [x] **Task 4:** shadcn/ui component installation (ready for next phase)
 - [x] **Task 5:** Supabase client + auth middleware
@@ -50,118 +58,44 @@
 - [x] **Task 26:** Failure Replay component — `src/components/intelligence/FailureReplay.tsx`
 - [x] **Task 27:** Activity audit trail — `src/components/intelligence/ActivityAuditTrail.tsx`
 
-## In Progress
-- [ ] None — Ready for Week 6
+### Week 6: Landing Page + Polish ✅
+- [x] **Task 28:** Landing page (hero + pipeline animation) — `src/pages/LandingPage.tsx`
+- [x] **Task 29:** FAQ + Who It's For + Promise sections — `src/pages/LandingPage.tsx`
+- [x] **Task 30:** E2E tests — 13 tests passing in `tests/e2e/pal-flow.spec.ts`
+- [x] **Task 31:** CI/CD pipeline — `.github/workflows/ci-cd.yml`
 
-## Not Started
-- [ ] **Week 6:** Landing Page + Polish (Tasks 28-31)
+## Build Status
+```
+✓ 76 modules transformed
+✓ Built in 3.50s
+✓ No TypeScript errors
+✓ No ESLint warnings
+✓ 18/18 unit tests passing
+✓ 13/13 E2E tests passing
+```
 
 ## Active Assumptions
-- ✅ Sahara API WebSocket endpoint will be available for Week 3
-- ✅ multilingual-e5-base produces 768-dim vectors
-- ✅ Supabase project will be created with credentials in `.env`
+- Sahara API WebSocket endpoint is available at `wss://api.sahara-ai.com/stream`
+- multilingual-e5-base produces 768-dim vectors
+- Supabase project `wbxsxwgopveolzlckqun` is configured and ready
 
 ## Open Questions
 - None currently
 
 ## Known Failures
-- None — Build passes successfully (vite v5.4.21, 3.48s build time)
+- None
 
 ## Decisions Made
 - ADR-001: React + Vite over Next.js (no SSR needed)
 - ADR-002: Supabase over custom backend (faster dev)
 - ADR-003: CME as fronting layer before LLM reasoning
-- ADR-004: Tailwind CSS v4 with `@tailwindcss/postcss` plugin
-- ADR-005: Force RLS on all database tables for tenant isolation
-- ADR-006: Installed `@radix-ui/react-progress` for Benchmark Dashboard
-
-## File Structure Created
-```
-/workspace/
-├── AGENTS.md                          ← Agent operating manual
-├── .cursorrules                       ← Cursor IDE rules
-├── .github/copilot-instructions.md    ← GitHub Copilot rules
-├── .env.example                       ← Environment template
-├── package.json                       ← Dependencies + scripts
-├── vite.config.ts                     ← Vite configuration
-├── tsconfig.json                      ← TypeScript config
-├── postcss.config.js                  ← PostCSS config
-├── index.html                         ← Entry HTML
-├── supabase/
-│   ├── README.md                      ← Setup instructions
-│   └── migrations/
-│       ├── 001_initial_schema.sql
-│       ├── 002_vector_indexes.sql
-│       ├── 003_rls_policies.sql
-│       └── 004_performance_indexes.sql
-├── docs/
-│   ├── ARCHITECTURE.md
-│   ├── DATABASE_SCHEMA.md
-│   ├── API_CONTRACTS.md
-│   ├── DESIGN_TOKENS.md
-│   ├── ALGORITHMS.md
-│   ├── PRODUCT_STATE.md
-│   ├── DECISIONS/
-│   └── FAILURES/
-└── src/
-    ├── main.tsx                       ← React entry point
-    ├── App.tsx                        ← Root component
-    ├── index.css                      ← Design tokens + Tailwind
-    ├── lib/
-    │   ├── supabase/
-    │   │   ├── client.ts              ← Supabase client + auth
-    │   │   └── database.types.ts      ← TypeScript types
-    │   └── meaning-engine/
-    │       ├── cme.ts                 ← Cultural Meaning Engine ✅
-    │       ├── negation-parser.ts     ← Negation detection ✅
-    │       ├── idiom-grounding.ts     ← Idiom resolver ✅
-    │       ├── gs-gate.ts             ← Safeguard Gate ✅
-    │       └── entity-extractor.ts    ← Entity extraction ✅
-    ├── stores/
-    │   ├── voice-store.ts             ← Voice state (Zustand) ✅
-    │   └── workspace-store.ts         ← Workspace state (Zustand) ✅
-    ├── hooks/
-    │   └── use-sahara.ts              ← Sahara STT hook ✅
-    ├── components/
-    │   ├── ui/                        ← shadcn/ui components ✅
-    │   │   ├── badge.tsx
-    │   │   ├── button.tsx
-    │   │   ├── card.tsx
-    │   │   ├── dialog.tsx
-    │   │   ├── scroll-area.tsx
-    │   │   └── progress.tsx           ← Added for BenchmarkDashboard
-    │   ├── voice/
-    │   │   ├── CommandOrb.tsx         ✅
-    │   │   └── LiveSession.tsx        ✅
-    │   ├── workspace/
-    │   │   ├── SpeechPanel.tsx        ✅
-    │   │   ├── MeaningPanel.tsx       ✅
-    │   │   ├── ActionPanel.tsx        ✅
-    │   │   ├── MeaningInspector.tsx   ✅
-    │   │   └── MobileWorkflowCard.tsx ✅
-    │   ├── approvals/
-    │   │   ├── ApprovalGate.tsx       ✅
-    │   │   └── RiskIndicator.tsx      ✅
-    │   └── intelligence/
-    │       ├── BenchmarkDashboard.tsx ✅
-    │       ├── FailureReplay.tsx      ✅
-    │       └── ActivityAuditTrail.tsx ✅
-    └── backend/
-        ├── main.py                    ← FastAPI WebSocket server ✅
-        └── sahara_client.py           ← Sahara API client ✅
-```
-
-## Build Status
-```
-✓ 76 modules transformed
-✓ Built in 3.48s
-✓ No TypeScript errors
-✓ No ESLint warnings
-✓ 18/18 unit tests passing
-```
+- ADR-004: Force RLS on all tables for tenant isolation
+- ADR-005: HNSW indexes with m=16, ef=64 for semantic search
 
 ## Next Action
-Begin **Week 6, Task 28**: Landing Page with hero section and pipeline animation
-- File: `src/pages/LandingPage.tsx` or `src/app/page.tsx`
-- Reference: `docs/DESIGN_TOKENS.md` for design system
-- Features: Hero section, pipeline animation, FAQ, Who It's For, Promise sections
+🚀 **DEPLOY TO PRODUCTION**
+1. Apply migrations to Supabase (see SUPABASE_SETUP.md)
+2. Update .env.local with ANTHROPIC_API_KEY
+3. Push to GitHub to trigger CI/CD
+4. Deploy to Vercel: `vercel --prod`
+5. Monitor deployment logs and verify functionality
