@@ -1,90 +1,46 @@
 ```
 # Dependencies
 node_modules/
-.pnpm-store/
-.npm/
-.yarn/
-.yarn-cache/
-
-# Build outputs
-dist/
-build/
-coverage/
-.nyc_output/
-.eslintcache
-
-# Runtime and cache
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-.cache/
-.session
-.sessions
-.mypy_cache/
-.pytest_cache/
-.hypothesis/
 
 # Environment
 .env
 .env.local
 .env.*
-!.env.example
-
-# IDE and editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-Thumbs.db
 
 # Logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-Thumbs.db:encryptable
+# Build artifacts
+dist/
+build/
+target/
 
-# Testing
-coverage/
-.nyc_output/
-.jest/
-
-# Node.js
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-node_modules/
-.pnp/
-.pnp.js
-
-# TypeScript
-*.tsbuildinfo
-*.bak
-
-# Vite
-.svelte-kit/
-.virtual/
-.vite/
-
-# Supabase
-.supabase/
-
-# Temporary files
-*.tmp
-*.temp
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.db
 *.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+.MF
+classes/
+.DS_Store
 ```
